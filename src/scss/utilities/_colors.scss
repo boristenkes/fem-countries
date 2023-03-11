@@ -1,0 +1,14 @@
+@use '../abstracts/' as *;
+
+@each $theme, $themeColors in $colors {
+	@each $color-name, $shades in $themeColors {
+		@each $label, $shade in $shades {
+			.text-#{$theme}-#{$color-name}-#{$label} {
+				color: #{$shade} !important;
+			}
+			.bg-#{$theme}-#{$color-name}-#{$label} {
+				background-color: #{$shade} !important;
+			}
+		}
+	}
+}
