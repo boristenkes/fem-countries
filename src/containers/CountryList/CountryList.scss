@@ -1,0 +1,13 @@
+.countries {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 5rem;
+	padding-bottom: 10rem;
+
+	.error {
+		color: var(--text-clr);
+		font-family: var(--ff-primary);
+		font-size: 1.25rem;
+		text-align: center;
+	}
+}

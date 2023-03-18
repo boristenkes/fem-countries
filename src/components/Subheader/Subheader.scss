@@ -2,5 +2,6 @@
 
 .subheader {
 	@include flex(space-between, center);
+	gap: 1rem;
 	--padding: 3rem;
 }

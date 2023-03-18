@@ -2,11 +2,13 @@ import './FilterBox.scss';
 import { useState } from 'react';
 import { Label, Input } from '../../components';
 import { HiChevronDown as ArrowIcon } from 'react-icons/hi';
+import DataContext from '../../context/DataContext';
+import { useContext } from 'react';
 
 const regions = ['Africa', 'America', 'Asia', 'Europe', 'Oceania'];
 
 export default function FilterBox() {
-	const [filter, setFilter] = useState('Filter by Region');
+	const { filter, setFilter } = useContext(DataContext);
 	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
 	const handleFilter = item => {
@@ -32,13 +34,15 @@ export default function FilterBox() {
 						type='text'
 						value={filter}
 						onChange={e => setFilter(e.target.value)}
+						placeholder='Filter by Region'
 						readOnly
+						disabled
 					/>
 					<ArrowIcon className='filterbox__arrow-icon' />
 				</Label>
 			</button>
 			<ul
-				className='filterbox__options'
+				className='filterbox__options | shadow'
 				data-open={isDropdownOpen}
 			>
 				{regions.map((item, index) => (

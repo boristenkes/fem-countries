@@ -15,7 +15,7 @@ function App() {
 					element={<Home />}
 				/>
 				<Route
-					path='/:id'
+					path='/:name'
 					element={<CountryReview />}
 				/>
 			</Routes>

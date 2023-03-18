@@ -24,7 +24,7 @@
 
 	&__options {
 		position: absolute;
-		width: inherit;
+		width: min(243px, 100%);
 		padding: 1.5rem 0.25rem;
 		background: var(--element-bg);
 		border-radius: 0.35rem;

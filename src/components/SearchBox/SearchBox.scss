@@ -3,11 +3,16 @@
 .searchbox {
 	padding-left: 0;
 	&__icon {
+		min-width: 2rem;
 		margin: 0.5rem 1.5rem;
 		font-size: 1.5rem;
 		color: var(--text-clr);
 	}
 	&__input {
 		width: 100%;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		max-width: 100%;
 	}
 }

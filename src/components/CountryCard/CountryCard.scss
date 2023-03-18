@@ -1,0 +1,38 @@
+.country {
+	width: min(300px, 100%);
+	background-color: var(--element-bg);
+	font-family: var(--ff-primary);
+	border-radius: 0.5rem;
+	overflow: hidden;
+
+	&__flag {
+		height: 175px;
+		width: 100%;
+		background-image: var(--flag);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+	&__info {
+		padding: 1.5rem;
+
+		&_name {
+			font-weight: var(--fw-extrabold);
+			font-size: 1.25rem;
+			color: var(--text-clr);
+		}
+		&_details {
+			margin-block: 1rem;
+			line-height: 1.75;
+
+			p {
+				color: var(--text-clr);
+			}
+
+			span {
+				font-weight: var(--fw-semibold);
+			}
+		}
+	}
+}
