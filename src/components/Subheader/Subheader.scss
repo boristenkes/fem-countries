@@ -1,0 +1,6 @@
+@use '../../scss/abstracts/' as *;
+
+.subheader {
+	@include flex(space-between, center);
+	--padding: 3rem;
+}

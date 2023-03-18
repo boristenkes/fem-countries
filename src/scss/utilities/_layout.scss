@@ -1,7 +1,7 @@
 @use '../abstracts/' as *;
 
 .container {
-	width: min((100% - 2rem), var(--container-width, 1500px));
+	width: min((100% - 2rem), var(--container-width, 1440px));
 	margin-inline: auto;
 }
 
@@ -17,4 +17,12 @@
 
 .section-padding {
 	padding-block: var(--padding, 5rem);
+}
+
+:root[data-theme='light'] .shadow {
+	box-shadow: rgba(map-get($colors, primary, 300), 0.24) 0px 3px 8px;
+}
+
+:root[data-theme='dark'] .shadow {
+	box-shadow: rgba(map-get($colors, primary, 600), 0.24) 0px 3px 8px;
 }

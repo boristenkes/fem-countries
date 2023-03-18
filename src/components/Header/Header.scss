@@ -1,0 +1,22 @@
+@use '../../scss/abstracts/' as *;
+
+.primary-header {
+	padding-block: 2rem;
+	background-color: var(--element-bg);
+	box-shadow: rgba(var(--clr-primary-300), 0.24) 0px 3px 8px;
+
+	&__wrapper {
+		@include flex(space-between, center);
+	}
+
+	&__logo {
+		font-size: 2rem;
+		color: var(--text-clr);
+	}
+	&__theme-toggle {
+		font-size: 2rem;
+		background-color: transparent;
+		border: none;
+		color: var(--text-clr);
+	}
+}

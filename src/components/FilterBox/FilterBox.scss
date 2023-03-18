@@ -1,0 +1,55 @@
+@use '../../scss/abstracts/' as *;
+
+.filterbox {
+	width: min(250px, 100%);
+	position: relative;
+
+	&__dropdown-switcher {
+		background: transparent;
+		border: none;
+	}
+
+	&__label,
+	&__input {
+		cursor: pointer;
+	}
+	&__arrow-icon {
+		position: absolute;
+		right: 1.25rem;
+		top: 50%;
+		transform: translateY(-50%);
+		font-size: 1.25rem;
+		color: var(--text-clr);
+	}
+
+	&__options {
+		position: absolute;
+		width: inherit;
+		padding: 1.5rem 0.25rem;
+		background: var(--element-bg);
+		border-radius: 0.35rem;
+		margin-top: 0.25rem;
+		transition: visibility, transform, opacity, 250ms ease;
+		@include separate-children(0.25rem);
+
+		&:not([data-open='true']) {
+			transform: translateY(-1rem);
+			visibility: hidden;
+			opacity: 0;
+		}
+
+		&--option {
+			button {
+				background: inherit;
+				border-radius: 0.35rem;
+				width: 100%;
+				padding: 0.35rem 1.75rem;
+				text-align: left;
+				border: none;
+				color: var(--text-clr);
+				font-family: var(--ff-primary);
+				font-size: 1.1rem;
+			}
+		}
+	}
+}
