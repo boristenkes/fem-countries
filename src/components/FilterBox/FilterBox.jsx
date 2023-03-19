@@ -38,7 +38,11 @@ export default function FilterBox() {
 						readOnly
 						disabled
 					/>
-					<ArrowIcon className='filterbox__arrow-icon' />
+					<ArrowIcon
+						className='filterbox__arrow-icon'
+						style={{ rotate: `${isDropdownOpen ? 180 : 0}deg` }}
+						aria-hidden='true'
+					/>
 				</Label>
 			</button>
 			<ul

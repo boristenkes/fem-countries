@@ -18,6 +18,7 @@ export default function SearchBox() {
 				className='searchbox__input'
 				id='searchInput'
 				type='text'
+				autoComplete='off'
 				placeholder='Search for a country...'
 				value={search}
 				onChange={e => setSearch(e.target.value)}

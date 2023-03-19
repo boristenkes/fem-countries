@@ -1,0 +1,73 @@
+@use '../../scss/abstracts/' as *;
+
+.country-review {
+	min-height: 50vh;
+	--gap: 7.5rem;
+	padding-top: 0 !important;
+	align-items: center;
+
+	&__back-btn {
+		background: var(--element-bg);
+		color: var(--text-clr);
+		padding: 0.5rem 2rem;
+		border: none;
+		border-radius: 0.25rem;
+		@include flex(center, center);
+		gap: 0.5rem;
+		font-family: var(--ff-button);
+	}
+
+	&__flag {
+		height: 45vh;
+		border-radius: 0.25rem;
+
+		background: {
+			image: var(--flag);
+			size: cover;
+			repeat: no-repeat;
+			position: center;
+		}
+	}
+
+	&__info {
+		&_name {
+			font-size: 2rem;
+			font-family: var(--ff-heading);
+			font-weight: var(--fw-extrabold);
+			color: var(--text-clr);
+		}
+		&_details {
+			@include flex(space-between);
+			margin-block: 3rem 4rem;
+
+			&--value {
+				font-size: 1rem;
+				font-family: var(--ff-body);
+				font-weight: var(--fw-thin);
+				letter-spacing: 0.25px;
+				color: var(--text-clr);
+			}
+			&--label {
+				font-weight: var(--fw-semibold);
+			}
+		}
+	}
+	&__borders {
+		font-family: var(--ff-primary);
+		font-weight: var(--fw-semibold);
+		font-size: 1.125rem;
+		color: var(--text-clr);
+		@include flex($align: center, $wrap: wrap);
+
+		&--border {
+			line-height: 2.5;
+			padding-inline: 1.5rem;
+			border-radius: 0.25rem;
+			background: var(--element-bg);
+			color: var(--text-clr);
+			margin: 0.5rem 1rem;
+			font-size: 1rem;
+			font-weight: var(--fw-thin);
+		}
+	}
+}

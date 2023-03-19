@@ -8,10 +8,12 @@
 	&__flag {
 		height: 175px;
 		width: 100%;
-		background-image: var(--flag);
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: center;
+		background: {
+			image: var(--flag);
+			size: cover;
+			repeat: no-repeat;
+			position: center;
+		}
 	}
 
 	&__info {

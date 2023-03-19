@@ -7,7 +7,7 @@
 
 .even-columns {
 	display: grid;
-	gap: 1rem;
+	gap: var(--gap, 1rem);
 
 	@include mq('tablet-wide') {
 		grid-auto-flow: column;
