@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 
-export default function useFetch(apiUrl = '../../data.json') {
+export default function useFetch(
+	apiUrl = 'https://raw.githubusercontent.com/boristenkes/fem-countries/master/data.json',
+) {
 	const [data, setData] = useState([]);
 	const [fetchError, setFetchError] = useState(null);
 	const [isLoading, setIsLoading] = useState(false);
