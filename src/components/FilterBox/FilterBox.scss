@@ -51,6 +51,10 @@
 				color: var(--text-clr);
 				font-family: var(--ff-primary);
 				font-size: 1.1rem;
+				&:hover,
+				&:focus-visible {
+					background: var(--element-bg-active);
+				}
 			}
 		}
 	}

@@ -5,7 +5,7 @@ import { Home, CountryReview } from './pages';
 function App() {
 	return (
 		<div
-			className='App'
+			className='App | theme-transition'
 			style={{ minHeight: '100vh', backgroundColor: 'var(--body-bg)' }}
 		>
 			<Header />

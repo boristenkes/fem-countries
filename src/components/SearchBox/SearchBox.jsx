@@ -3,21 +3,25 @@ import { RxMagnifyingGlass as SearchIcon } from 'react-icons/rx';
 import { Label, Input } from '../../components';
 import DataContext from '../../context/DataContext';
 import { useContext } from 'react';
+import { useMediaQuery } from 'react-responsive';
 
 export default function SearchBox() {
 	const { search, setSearch } = useContext(DataContext);
+	const isDesktop = useMediaQuery({ query: '(min-width: 560px)' });
 
 	return (
 		<Label
 			htmlFor='searchInput'
-			className='searchbox | shadow'
+			className='searchbox | shadow theme-transition'
 		>
-			<SearchIcon className='searchbox__icon' />
+			{isDesktop && (
+				<SearchIcon className='searchbox__icon | theme-transition' />
+			)}
 			<Input
 				autoFocus
-				className='searchbox__input'
+				className='searchbox__input | theme-transition'
 				id='searchInput'
-				type='text'
+				type='search'
 				autoComplete='off'
 				placeholder='Search for a country...'
 				value={search}

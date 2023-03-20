@@ -14,6 +14,7 @@ export default function CountryList() {
 			countries.filter(
 				country =>
 					country.name.toLowerCase().includes(search.toLowerCase()) &&
+					filter !== 'All' &&
 					country.region.includes(filter),
 			),
 		);
@@ -23,9 +24,9 @@ export default function CountryList() {
 		<main className='countries | container'>
 			{isLoading && <Loader />}
 			{!fetchError && filteredCountries.length ? (
-				filteredCountries.map(country => (
+				filteredCountries.map((country, index) => (
 					<CountryCard
-						key={country.name}
+						key={`country-${index + 1}`}
 						country={country}
 					/>
 				))

@@ -6,3 +6,4 @@ export { default as Label } from './Label/Label';
 export { default as Loader } from './Loader/Loader';
 export { default as SearchBox } from './SearchBox/SearchBox';
 export { default as Subheader } from './Subheader/Subheader';
+export { default as ThemeSwitcher } from './ThemeSwitcher/ThemeSwitcher';
