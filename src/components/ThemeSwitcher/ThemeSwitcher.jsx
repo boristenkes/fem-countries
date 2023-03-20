@@ -12,10 +12,10 @@ export default function ThemeSwitcher({
 			{...props}
 			title={`Switch to ${isDarkMode ? 'light' : 'dark'} mode`}
 		>
-			<div className='star'>
+			<span className='star'>
 				<span className='square'></span>
 				<span className='square'></span>
-			</div>
+			</span>
 			<span className='circle circle--outer'></span>
 			<span className='circle circle--inner'></span>
 		</button>

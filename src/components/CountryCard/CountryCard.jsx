@@ -4,7 +4,7 @@ import './CountryCard.scss';
 export default function CountryCard({ country }) {
 	return (
 		<article className='country | shadow theme-transition'>
-			<Link to={`/${country.name}`}>
+			<Link to={`/${country.alpha3Code}`}>
 				<div
 					className='country__flag'
 					style={{ '--flag': `url(${country.flag})` }}

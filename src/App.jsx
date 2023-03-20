@@ -15,7 +15,7 @@ function App() {
 					element={<Home />}
 				/>
 				<Route
-					path='/:name'
+					path='/:alpha3Code'
 					element={<CountryReview />}
 				/>
 			</Routes>

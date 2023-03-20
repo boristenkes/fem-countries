@@ -19,13 +19,16 @@ export default function FilterBox() {
 
 	return (
 		<div className='filterbox'>
-			<button
+			<div
 				className='filterbox__dropdown-switcher'
 				onClick={() => {
 					setIsDropdownOpen(prev => !prev);
 					setFilterClicks(prev => prev + 1);
 				}}
+				onKeyDown={e => e.key === 'Enter' && e.target.click()}
 				aria-expanded={isDropdownOpen}
+				role='button'
+				tabIndex='0'
 			>
 				<Label
 					htmlFor='dropdown'
@@ -36,7 +39,6 @@ export default function FilterBox() {
 						id='dropdown'
 						type='text'
 						value={filter}
-						onChange={e => setFilter(e.target.value)}
 						placeholder='Filter by Region'
 						readOnly
 						disabled
@@ -47,11 +49,10 @@ export default function FilterBox() {
 						aria-hidden='true'
 					/>
 				</Label>
-			</button>
+			</div>
 			<ul
 				className='filterbox__options | shadow theme-transition'
 				data-open={isDropdownOpen}
-				aria-label='Filter options'
 			>
 				{regions.map((item, index) => (
 					<li
@@ -61,6 +62,7 @@ export default function FilterBox() {
 						<button
 							onClick={() => handleFilter(item)}
 							className='theme-transition'
+							style={{ transitionDuration: '250ms' }}
 						>
 							{item}
 						</button>

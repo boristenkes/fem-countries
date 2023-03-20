@@ -73,15 +73,17 @@ const dataKeys = [
 
 export default function CountryReview() {
 	const [countries, fetchError, isLoading] = useFetch();
-	const { name } = useParams();
+	const { alpha3Code } = useParams();
 	const navigate = useNavigate();
 
 	const [borderCountries, setBorderCountries] = useState([]);
 	const [selectedCountry, setSelectedCountry] = useState(null);
 
 	useEffect(() => {
-		setSelectedCountry(countries.find(country => country.name === name));
-	}, [countries, name]);
+		setSelectedCountry(
+			countries.find(country => country.alpha3Code === alpha3Code),
+		);
+	}, [countries, alpha3Code]);
 
 	useEffect(() => {
 		if (selectedCountry && selectedCountry.borders)
@@ -94,14 +96,14 @@ export default function CountryReview() {
 
 	return (
 		<>
-			<div className='container section-padding'>
+			<section className='container section-padding'>
 				<button
 					onClick={() => navigate('/')}
 					className='country-review__back-btn | shadow theme-transition'
 				>
 					<ArrowLeft /> Back
 				</button>
-			</div>
+			</section>
 			<main className='country-review | container section-padding even-columns'>
 				{!fetchError && selectedCountry ? (
 					<>
@@ -160,8 +162,9 @@ export default function CountryReview() {
 									{borderCountries.map(borderCountry => (
 										<Link
 											className='country-review__borders--border | shadow theme-transition'
-											to={`/${borderCountry.name}`}
+											to={`/${borderCountry.alpha3Code}`}
 											key={borderCountry.alpha3Code}
+											style={{ transitionDuration: '250ms' }}
 										>
 											{borderCountry.name}
 											<img

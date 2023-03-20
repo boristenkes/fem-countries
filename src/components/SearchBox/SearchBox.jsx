@@ -18,7 +18,6 @@ export default function SearchBox() {
 				<SearchIcon className='searchbox__icon | theme-transition' />
 			)}
 			<Input
-				autoFocus
 				className='searchbox__input | theme-transition'
 				id='searchInput'
 				type='search'
