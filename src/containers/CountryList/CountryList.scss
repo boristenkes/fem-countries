@@ -1,6 +1,7 @@
+@use '../../scss/abstracts/' as *;
+
 .countries {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	@include flex(center, $wrap: wrap);
 	gap: 5rem;
 	padding-bottom: 10rem;
 
