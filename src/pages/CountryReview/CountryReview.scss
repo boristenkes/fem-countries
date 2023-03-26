@@ -17,7 +17,9 @@
 	}
 
 	&__flag {
-		height: 45vh;
+		width: min(600px, 100%);
+		aspect-ratio: 12 / 9;
+		margin-inline: auto;
 		border-radius: 0.25rem;
 
 		background: {

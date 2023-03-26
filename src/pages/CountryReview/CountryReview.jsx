@@ -3,6 +3,7 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useFetch } from '../../hooks';
 import { BsArrowLeft as ArrowLeft } from 'react-icons/bs';
 import { useEffect, useState } from 'react';
+import { Loader } from '../../components';
 
 const dataKeys = [
 	{
@@ -105,7 +106,9 @@ export default function CountryReview() {
 				</button>
 			</section>
 			<main className='country-review | container section-padding even-columns'>
-				{!fetchError && selectedCountry ? (
+				{isLoading ? (
+					<Loader absolute />
+				) : !fetchError && selectedCountry ? (
 					<>
 						<div
 							className='country-review__flag | shadow'
@@ -139,7 +142,7 @@ export default function CountryReview() {
 								<div>
 									{dataKeys
 										.slice(dataKeys.length / 2, dataKeys.length)
-										.map((dataKey, index) => (
+										.map(dataKey => (
 											<p
 												key={dataKey.label}
 												className='country-review__info_details--value | theme-transition'
@@ -151,7 +154,7 @@ export default function CountryReview() {
 													? selectedCountry[dataKey.key].join(', ')
 													: typeof selectedCountry[dataKey.key] === 'number'
 													? selectedCountry[dataKey.key].toLocaleString()
-													: selectedCountry[dataKey.key]}
+													: selectedCountry[dataKey.key] || '-'}
 											</p>
 										))}
 								</div>

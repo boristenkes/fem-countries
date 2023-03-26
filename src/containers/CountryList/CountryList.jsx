@@ -21,20 +21,25 @@ export default function CountryList() {
 	}, [search, filter, countries]);
 
 	return (
-		<main className='countries | container'>
-			{isLoading && <Loader />}
-			{!fetchError && filteredCountries.length ? (
-				filteredCountries.map((country, index) => (
-					<CountryCard
-						key={`country-${index + 1}`}
-						country={country}
-					/>
-				))
+		<>
+			{isLoading ? (
+				<Loader absolute />
 			) : (
-				<p className='error'>
-					{fetchError ? fetchError : 'Couldn’t find matching countries'}
-				</p>
+				<main className='countries | container'>
+					{!fetchError && filteredCountries.length ? (
+						filteredCountries.map((country, index) => (
+							<CountryCard
+								key={`country-${index + 1}`}
+								country={country}
+							/>
+						))
+					) : (
+						<p className='error'>
+							{fetchError ? fetchError : 'Couldn’t find matching countries'}
+						</p>
+					)}
+				</main>
 			)}
-		</main>
+		</>
 	);
 }

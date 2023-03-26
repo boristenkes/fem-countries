@@ -39,7 +39,7 @@ export default function FilterBox() {
 						id='dropdown'
 						type='text'
 						value={filter}
-						placeholder='Filter by Region'
+						placeholder={'Filter by Region'}
 						readOnly
 						disabled
 					/>

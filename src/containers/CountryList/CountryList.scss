@@ -1,9 +1,13 @@
 @use '../../scss/abstracts/' as *;
 
 .countries {
-	@include flex(center, $wrap: wrap);
+	@include flex($wrap: wrap);
 	gap: 5rem;
 	padding-bottom: 10rem;
+
+	@include mq('tablet-small', max) {
+		justify-content: center;
+	}
 
 	.error {
 		color: var(--text-clr);
